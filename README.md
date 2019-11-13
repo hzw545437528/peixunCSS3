@@ -78,9 +78,9 @@ html {
 
 头部header有以下要点：
 
-- OUTDOORS和下面的IS WHERE LIFE HAPPENS 字母与字母之间的间隔可以使用letter-spacing属性。
+- OUTDOORS和下面的IS WHERE LIFE HAPPENS 字母与字母之间的间隔可以使用 **letter-spacing** 属性。
 
-- 背景色使用的是background-image的linear-gradient，可百度，颜色代码为：
+- 背景色使用的是 **background-image** 的 **linear-gradient** ，可百度，颜色代码为：
 
   ```css
   rgba(85, 197, 122, 0.8), rgba(40, 180, 133, 0.8)
@@ -88,11 +88,11 @@ html {
 
 - 刚进入页面时，标题，副标题，以及按钮会有一个进入的动画效果，可以看看 **@keyframes** 的使用方法，配合   **animation** 使用。
 
-- 鼠标移到白色按钮上面，会有一个动画效果，移出时还有另一个动画效果，这个可以配合 **::after** 伪类元素来使用，提示：放大效果用**transform:scale**，消失用**opacity：0**实现。
+- 鼠标移到白色按钮上面，会有一个动画效果，移出时还有另一个动画效果，这个可以配合 **::after** 伪类元素来使用，提示：放大效果用**transform:scale**，消失用**opacity：0**实现。另外鼠标悬停在按钮上时，会有一个小的向上位移的动画，并且出现阴影。
 
 - 右上角的小球始终固定在右上角，上下浏览页面也是。
 
-- 右上角的小球里面的横线指定比较小的height和width，background-color为黑色即可。中间的横线写好后，用伪类元素 **::before** 和 **::after** 写出上面和下面的黑线。指针移上去，上面和下面的黑线会分别平移向上向下平移。
+- 右上角的小球里面的横线指定比较小的 **height** 和 **width**，**background-color **为黑色即可。中间的横线写好后，用伪类元素 **::before** 和 **::after** 写出上面和下面的黑线。指针移上去，上面和下面的黑线会分别平移向上向下平移。
 
 - 背景的剪裁可以使用clip-path实现。
 
@@ -143,7 +143,7 @@ html {
 
   ![image-20191113085122759](https://github.com/caiduncheng/peixun1/blob/master/img/image-20191113085122759.png?raw=true)
 
-  同样用checkbox触发的方式，通过选择器选中绿球，并将他放大一个很大的倍数，比如80倍(transform: scale(80))。
+  同样用checkbox触发的方式，通过选择器选中绿球，并将他放大一个很大的倍数，比如80倍(transform: scale(80))，再指定一下transition参数，就可以了。
 
   菜单从左往右的弹出的实现：
 
@@ -156,14 +156,22 @@ html {
   ```css
   transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   ```
+  
+   ↓↓↓这个网址可以根据不同动画效果获得cubic-bezier的参数↓↓↓
 
-
+​			 http://www.roblaplaca.com/examples/bezierBuilder/ 
 
   ![image](https://github.com/caiduncheng/peixun1/blob/master/img/image-20191113100206427.png?raw=true)
 
+- 背景色代码:
+
+  ```scss
+  #f7f7f7
+  ```
+
 - 标题的颜色一样用linear-gradient，颜色代码：
 
-  ```css
+  ```scss
   #7ed56f, #28b485
   ```
 
@@ -180,13 +188,62 @@ html {
 
 - Learn more 鼠标移上去的样式变化，比较简单。颜色
 
-  ```css
+  ```scss
   #55c57a
   ```
 
+![image](https://github.com/caiduncheng/peixun1/blob/master/img/%E6%8D%95%E8%8E%B7.PNG?raw=true)
 
+- 阴影代码
 
-背景色填充效果
+  ```scss
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15)
+  ```
+
+- 四个小卡片的背景色不是全白，有点透明，可以用rgba的第四个参数调整。
+
+- 四个图标可以从iconfonts下载，使用方法可以看看官网。四个图标搜索关键字：world compass map heart
+
+- 背景的变形效果用到了 **transform** 的 **skewY** ，没有用到clip-path。
+
+- 鼠标放上去有向上平移和放大的效果
+
+- 图标的背景色填充效果要用到 **-webkit-background-clip: text** 
+
+  ```scss
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  color: transparent;
+  -webkit-background-clip: text; /* 一定要放在后面 */
+  ```
+
+  ![image](https://github.com/caiduncheng/peixun1/blob/master/img/tours.PNG?raw=true)
+
+- 背景色
+
+  ```scss
+  #f7f7f7
+  ```
+
+- 三张卡片的颜色代码：
+
+  ```scss
+  /* 第一张正面和反面背景色 */
+  #ffb900, #ff7730
+  /* 第一张 THE SEA EXPLORER 背景色 */
+  rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85)
+  /* 第二张正面反面背景色 */
+  #7ed56f, #28b485
+  /* 第二张 THE FOREST HIKER */ 
+  rgba(126, 213, 111, 0.85), rgba(40, 180, 133, 0.85)
+  /* 第三张 正反面*/ 
+  #2998ff, #5643fa
+  /* 第三张 THE SNOW ADVENTURE */ 
+  rgba(41, 152, 255, 0.85), rgba(86, 67, 250, 0.85)
+  ```
+
+- 卡片正面上面的背景滤镜效果用到了css3的属性 **background-blend-mode: screen**
+
+- 卡片的翻转效果用到了 **transform: rotateY** 以及新的属性 **perspective** ，也就是可以让元素获得透视效果，具体的值可以自己多改改，多观察它的变化。
 
 ### 运行
 
