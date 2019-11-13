@@ -92,7 +92,7 @@ html {
 
 - 右上角的小球始终固定在右上角，上下浏览页面也是。
 
-- 右上角的小球里面的横线指定比较小的height和width，background-color为黑色即可。中间的横线写好后，用伪类元素 **::before** 和 **::after** 写出上面和下面的黑线。鼠标移上去，上面和下面的黑线会分别平移向上向下平移。
+- 右上角的小球里面的横线指定比较小的height和width，background-color为黑色即可。中间的横线写好后，用伪类元素 **::before** 和 **::after** 写出上面和下面的黑线。指针移上去，上面和下面的黑线会分别平移向上向下平移。
 
 - 背景的剪裁可以使用clip-path实现。
 
@@ -131,7 +131,7 @@ html {
 
   上下两条黑线旋转，使用transform: rotate
 
-  再来说说点击后背景色逐渐放大，并遮住主页面的效果。
+  再来说说点击后背景色逐渐放大，并遮住主页面的效果。 
 
   首先写出一个绿色的球，尺寸略小于白球，将它放在白球下面。
 
@@ -161,12 +161,32 @@ html {
 
   ![image](https://github.com/caiduncheng/peixun1/blob/master/img/image-20191113100206427.png?raw=true)
 
-要点：
+- 标题的颜色一样用linear-gradient，颜色代码：
 
-- 标题的颜色一样用linear-gradient
-- 鼠标移动到标题上的效果可以用 **transform: skewX skewY scale** 来实现，阴影用text-shadow
+  ```css
+  #7ed56f, #28b485
+  ```
+
+- 鼠标移动到标题上的效果可以用 **transform: skewX skewY scale** 来实现，阴影用text-shadow，参数：
+
+  ```scss
+  $color-black: #000000;
+  text-shadow: .5rem 1rem 2rem rgba($color-black, .2);
+  ```
+
 - 鼠标放在图片上后，该图片会放大，其他图片会缩小。提示：可以用not选择器
--
+
+- 标题下面的文本，可以去 https://lipsum.com/ 生成。
+
+- Learn more 鼠标移上去的样式变化，比较简单。颜色
+
+  ```css
+  #55c57a
+  ```
+
+
+
+背景色填充效果
 
 ### 运行
 
