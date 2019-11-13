@@ -74,7 +74,7 @@ html {
 
 
 
-![image-20191112155542455](https://sh-ctfs.ftn.qq.com/ftn_handler/90f238a4b9a0152ca3daba195a6b51d8d982fd219918ec33fab17fc135637553f540ba5f48a20d1a51896c7e0389cef8c291e95668925c0906493c5398bea2fe/?fname=*.png&pictype=scaled&size=1024*768)
+![image-20191112155542455](https://github.com/caiduncheng/peixun1/blob/master/img/image-20191112155542455.png?raw=true)
 
 头部header有以下要点：
 
@@ -141,7 +141,7 @@ html {
   #7ed56f, #28b485
   ```
 
-  ![image-20191113085122759](https://sh-ctfs.ftn.qq.com/ftn_handler/4a78d412003efb2df3473fd49e0eb8315283b9d29be99306635627f7cb0d007f37115c4dbde586fd902368f24c14803e486665e9e56589d7664a1c27df6b6b9a/?fname=*.png&pictype=scaled&size=1024*768)
+  ![image-20191113085122759](https://github.com/caiduncheng/peixun1/blob/master/img/image-20191113085122759.png?raw=true)
 
   同样用checkbox触发的方式，通过选择器选中绿球，并将他放大一个很大的倍数，比如80倍(transform: scale(80))。
 
@@ -159,7 +159,7 @@ html {
 
 
 
-  ![image](https://sh-ctfs.ftn.qq.com/ftn_handler/cde41e43656470cab48f68ad1d7b22eedf4a4363705798ccaff6b6c143d41462cf770d7860a9cf10b63aad4e23cb20f33beb5a322476e25a4ce1b99d9859ab99/?fname=*.png&pictype=scaled&size=1024*768)
+  ![image](https://github.com/caiduncheng/peixun1/blob/master/img/image-20191113100206427.png?raw=true)
 
 要点：
 
