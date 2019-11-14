@@ -98,7 +98,7 @@ html {
 
 - 点击右上角小球，弹出菜单栏，三条横线变成‘X’，先说下变成‘X'的实现方法：
 
-  首先要有一个checkbox选择框作为触发器。
+  首先要有一个checkbox选择框作为触发器，这个checkbox当然是要不可见的。
 
   ```html
   <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
@@ -131,7 +131,7 @@ html {
 
   上下两条黑线旋转，使用transform: rotate
 
-  再来说说点击后背景色逐渐放大，并遮住主页面的效果。 
+  再来说说点击后背景色逐渐放大，并遮住主页面的效果。
 
   首先写出一个绿色的球，尺寸略小于白球，将它放在白球下面。
 
@@ -156,10 +156,10 @@ html {
   ```css
   transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   ```
-  
+
    ↓↓↓这个网址可以根据不同动画效果获得cubic-bezier的参数↓↓↓
 
-​			 http://www.roblaplaca.com/examples/bezierBuilder/ 
+​			 http://www.roblaplaca.com/examples/bezierBuilder/
 
   ![image](https://github.com/caiduncheng/peixun1/blob/master/img/image-20191113100206427.png?raw=true)
 
@@ -208,7 +208,7 @@ html {
 
 - 鼠标放上去有向上平移和放大的效果
 
-- 图标的背景色填充效果要用到 **-webkit-background-clip: text** 
+- 图标的背景色填充效果要用到 **-webkit-background-clip: text**
 
   ```scss
   background-image: linear-gradient(to right, #7ed56f, #28b485);
@@ -233,11 +233,11 @@ html {
   rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85)
   /* 第二张正面反面背景色 */
   #7ed56f, #28b485
-  /* 第二张 THE FOREST HIKER */ 
+  /* 第二张 THE FOREST HIKER */
   rgba(126, 213, 111, 0.85), rgba(40, 180, 133, 0.85)
-  /* 第三张 正反面*/ 
+  /* 第三张 正反面*/
   #2998ff, #5643fa
-  /* 第三张 THE SNOW ADVENTURE */ 
+  /* 第三张 THE SNOW ADVENTURE */
   rgba(41, 152, 255, 0.85), rgba(86, 67, 250, 0.85)
   ```
 
