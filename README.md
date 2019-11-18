@@ -245,6 +245,105 @@ html {
 
 - 卡片的翻转效果用到了 **transform: rotateY** 以及新的属性 **perspective** ，也就是可以让元素获得透视效果，具体的值可以自己多改改，多观察它的变化。
 
+- 点击BUY，背景色会逐渐变黑，这个可以用transition实现，然后弹出一个弹出框，这个弹出框的动画是等待背景开始变化后的一段时间才开始，这个可以用到transition-delay，动画延迟。该弹出框由小变大的动画效果是利用scale，让它的初始值变小，在显示时恢复它的大小，淡入的效果用opacity的变化。
+
+- 弹出框的背景和窗口的隐藏是一开始将整个元素设为
+
+  ```scss
+  opacity: 0;
+  visibility: hidden
+  ```
+
+  buy按钮设置为a标签，href属性设为弹出框父元素的id。
+
+  给该父元素的伪类target设置样式，就能实现点击按钮显示弹出框。
+
+  ```scss
+  button:target {
+      opacity: 1;
+      visibility: visible;
+  }
+  ```
+
+  ![image-20191118114601473](https://github.com/caiduncheng/peixun1/blob/master/img/image-20191118114601473.png?raw=true)
+
+- 两个形状是通过 **transform: skewX** 实现。外部变形后，内部要反过来变形，否则内容会倾斜。
+
+- 照片的圆形通过 **clip-path** 实现。
+
+- 模糊效果用的是 
+
+  ```scss
+  filter: brightness(80%) blur(3px);
+  ```
+
+- 文字的浮现效果，用 **opacity** 和 **transition** 实现
+
+- 外层阴影代码：
+
+  ```scss
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.5)
+  ```
+
+![image](https://github.com/caiduncheng/peixun1/blob/master/img/form.PNG?raw=true)
+
+- 绿色背景颜色代码
+
+  ```scss
+   #7ed56f, #28b485
+  ```
+
+- 内层表单实际上使用了两个背景，最下层的风景图，还有白色的梯形背景，样式比较长，我这里直接贴出来，可以调整一下各个参数的数值观察每个参数的作用
+
+  ```scss
+  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 41%), url(../img/nat-10.jpg);
+  ```
+
+- 外部阴影代码
+
+  ```scss
+  0 1.5rem 4rem rgba(0, 0, 0, 0.5)
+  ```
+
+- 输入表单时，如果表单不符合规定，会出现红色的底部边框，如果正确则变为绿色。实现方法是：首先预先设置一个透明色的底部边框，否则输入时，底部边框突然出现会导致整体元素的位移。
+
+  用 **:focus** 伪类来改变底部边框上色
+
+  input标签有 **required** 属性，表示必填，**type=email** 则表示邮箱格式的检验。
+
+  css有 **:invalid** 伪类元素，会选中不符合表单规则的元素
+
+  表单相关颜色代码
+
+  ```scss
+  /* 绿色底部边框 */ 
+  #55c57a
+  /* 红色底部边框 */
+  #ff7730
+  /* 表单获取焦点的阴影 */ 
+  0 1rem 2rem rgba($color-black, .1);
+  ```
+
+- 输入表单表单不为空时，表单的placeholder内容会偏移上去，这是用input的 **placeholder** 属性和另一个有同样内容的元素配合。初始状态先通过 **:placeholder-shown** 伪类和 **+** 选择相邻的文本元素，使它隐藏。
+
+  >  :*placeholder-shown* CSS 伪类 在 input 或 textarea 元素显示 placeholder text 时生效. 
+
+  ```scss
+   &__input:placeholder-shown + &__label {
+         opacity: 0;
+         visibility: hidden;
+         transform: translateY(-4rem);
+      } 
+  /* 注意，label自身的样式不能写在上面，否则输入文字后会失效。 */
+  ```
+
+  当输入文字后，该伪类选择器失效，再去写，在label自身的样式中加上
+
+  ```scss
+  transition: all .3s;
+  transform: translateY(-9rem);
+  ```
+
 ### 运行
 
 ```
