@@ -2,6 +2,10 @@ a {
     text-decoration: none;
 }
 
+li {
+    list-style: none;
+}
+
 .btn,
 .btn:link,
 .btn:visited {
@@ -46,5 +50,21 @@ a {
 
     &::after {
         background-color: #ffffff;
+    }
+}
+
+.text-btn {
+    display: inline-block;
+    font-size: 1.6rem;
+    padding: 3px;
+    border-bottom: 1px solid #55c57a;
+    color: #55c57a;
+    transition: all .2s;
+
+    &:hover {
+        color: #ffffff;
+        background-color: #55c57a;
+        transform: translateX(-2px);
+        box-shadow: 0 1rem 2rem rgba($color-black, .15);
     }
 }

@@ -1,3 +1,6 @@
+@import './mixin.scss';
+@import './variable.scss';
+
 html {
     font-size: 62.5%;
 }
@@ -24,4 +27,5 @@ body {
 }
 
 @import './base';
-@import "./components/head";
+@import './components/main';
+@import './layout/main'
