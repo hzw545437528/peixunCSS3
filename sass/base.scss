@@ -53,6 +53,15 @@ li {
     }
 }
 
+.btn--green {
+    background-color: #55c57a;
+    color: #ffffff;
+
+    &::after {
+        background-color: #55c57a;
+    }
+}
+
 .text-btn {
     display: inline-block;
     font-size: 1.6rem;
